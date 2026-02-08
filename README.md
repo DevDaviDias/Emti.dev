@@ -10,7 +10,7 @@ Plataforma de ensino tecnológico completa, focada em organizar o aprendizado de
 
 ## 📚 Matérias Inclusas
 * Lógica de Programação
-* Java POO
+* JavaPOO
 * HTML & CSS
 * Programação Web
 * Arquitetura e Manutenção
