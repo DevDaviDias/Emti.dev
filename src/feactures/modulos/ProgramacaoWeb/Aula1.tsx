@@ -1,112 +1,107 @@
 'use client';
 
-import { BookOpen, Clock, ArrowRight, Globe, Share2, Bookmark } from "lucide-react";
+import { BookOpen, Clock, ArrowRight, Globe, Monitor, Radio, Zap, Sparkles } from "lucide-react";
 
-export default function AulaProgramacaoWeb1() {
-  const videoId = "Ejkb_YpuHWs";
+export default function AulaProgramacaoWebMinimal() {
+  const videoId = "rsFCVjr5yxc";
 
   return (
-    <div className="w-full mx-auto space-y-10 animate-in fade-in duration-700">
+    <div className="flex flex-col gap-16 animate-in fade-in duration-1000 bg-zinc-950 p-6 md:p-16">
       
-      {/* HEADER ESTILO BLOG */}
-      <header className="space-y-6  md:text-left">
-        <div className="flex items-center justify-center md:justify-start gap-4 text-zinc-500 text-sm font-medium">
-          <span className="bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-xs tracking-tighter">Módulo 01</span>
-          <span className="flex items-center gap-1"><Clock size={14} /> 15 min de leitura</span>
+      {/* HEADER MINIMALISTA */}
+      <header className="max-w-4xl space-y-6">
+        <div className="flex items-center gap-4 text-zinc-600 text-[10px] font-black uppercase tracking-[0.3em]">
+          <span className="text-blue-500">Módulo 01</span>
+          <div className="w-1 h-1 bg-zinc-800 rounded-full" />
+          <span className="flex items-center gap-1"><Clock size={12} /> 12 min</span>
         </div>
         
-        <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
-          A Web não nasceu pronta: <br/> 
-          <span className="text-zinc-500 italic font-serif">Uma jornada de 1835 até hoje.</span>
+        <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter leading-[0.9]">
+          A WEB NÃO <br/>
+          <span className="text-zinc-800">NASCEU PRONTA</span>
         </h1>
 
-        <div className="flex items-center justify-center md:justify-start gap-3 pt-4 border-b border-zinc-800 pb-8">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-600 to-zinc-800 border border-zinc-700" />
-          <div className="text-left text-sm">
-            <p className="text-zinc-200 font-medium">Professor Especialista</p>
-            <p className="text-zinc-500 text-xs">Atualizado em 10 de Fev, 2026</p>
+        <p className="text-zinc-500 text-lg md:text-xl font-light max-w-2xl leading-relaxed">
+          Da comunicação rupestre aos cabos submarinos. Uma jornada pela necessidade humana de conexão.
+        </p>
+
+        <div className="flex items-center gap-4 pt-4">
+          <div className="w-8 h-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 text-[10px] font-bold">
+            GG
           </div>
-          <div className="ml-auto flex gap-2">
-             <button className="p-2 text-zinc-500 hover:text-white transition-colors"><Bookmark size={20} /></button>
-             <button className="p-2 text-zinc-500 hover:text-white transition-colors"><Share2 size={20} /></button>
+          <div className="text-left">
+            <p className="text-zinc-400 text-xs font-bold uppercase tracking-widest">Gustavo Guanabara</p>
+            <p className="text-zinc-600 text-[10px]">Especialista em Tecnologia</p>
           </div>
         </div>
       </header>
 
-      {/* PLAYER DE VÍDEO (COMO UM DESTAQUE DE ARTIGO) */}
-      <section className="relative group">
-        <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-zinc-900 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-        <div className="relative aspect-video w-full bg-black rounded-[2rem] overflow-hidden border border-zinc-800 shadow-2xl">
+      {/* PLAYER: SEM BORDAS PESADAS, APENAS O FOCO */}
+      <section className="w-full max-w-5xl group">
+        <div className="relative aspect-video rounded-[2rem] overflow-hidden bg-zinc-900 shadow-2xl transition-all duration-700 group-hover:shadow-blue-500/5">
           <iframe
-            className="w-full h-full"
+            className="w-full h-full opacity-90 group-hover:opacity-100 transition-opacity"
             src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`}
-            title="Vídeo Aula"
+            title="História da Internet"
             allowFullScreen
           />
         </div>
       </section>
 
-      {/* CONTEÚDO EM FORMATO DE ARTIGO */}
-      <article className="prose prose-zinc prose-invert max-w-none">
-        <p className="text-xl text-zinc-400 leading-relaxed font-serif italic mb-12">
-          "A internet é muito mais do que cabos e códigos; é o maior esforço de conexão coletiva da história da humanidade."
-        </p>
-
-        <h2 className="text-2xl font-bold text-white mb-6">O Nascimento do Protocolo</h2>
-        <p className="text-zinc-400 leading-loose">
-          Muitos acreditam que a internet surgiu nos anos 90, mas as raízes do envio de dados remontam a 1835. Samuel Morse não apenas criou o telégrafo, ele criou o primeiro <strong>protocolo binário</strong> funcional. Pontos e traços foram os ancestrais do nosso <code className="text-blue-400">0</code> e <code className="text-blue-400">1</code>.
-        </p>
-
-        <div className="my-12 rounded-2xl overflow-hidden border border-zinc-800">
-           
-           <p className="text-center text-[10px] text-zinc-500 p-4 bg-zinc-900/50 uppercase tracking-widest">Fig 1.1: O Telégrafo original e a tabela de código binário primário.</p>
-        </div>
-
-        <h2 className="text-2xl font-bold text-white mb-6">A Era de Tim Berners-Lee</h2>
-        <p className="text-zinc-400 leading-loose">
-          No final dos anos 80, no laboratório CERN, um engenheiro britânico percebeu que a internet era uma "estrada vazia". Ele criou o <strong>HTML</strong> e o <strong>HTTP</strong> para serem o veículo e o combustível. Com o hipertexto, a informação deixou de ser estática e passou a ser conectada por links.
-        </p>
-
-        {/* BOX DE DESTAQUE TÉCNICO */}
-        <div className="my-10 p-8 bg-zinc-900/40 border border-zinc-800 rounded-3xl space-y-4">
-          <h4 className="text-white font-bold flex items-center gap-2">
-            <Globe className="text-blue-500" size={20} /> O Conceito Cliente-Servidor
-          </h4>
-          <p className="text-sm text-zinc-400">
-            Imagine um restaurante: você (o <strong>Cliente</strong>) faz um pedido (<strong>Request</strong>). 
-            O garçom leva o pedido até a cozinha (<strong>Servidor</strong>), que prepara o prato e o envia de volta (<strong>Response</strong>). 
-            Sem esse ciclo, a web moderna simplesmente não existiria.
+      {/* ARTIGO: FOCO TOTAL NO TEXTO */}
+      <article className="max-w-3xl space-y-12">
+        <blockquote className="border-l-2 border-blue-500 pl-8 my-16">
+          <p className="text-2xl text-zinc-300 leading-relaxed font-light italic">
+            "A internet é o resultado de uma insatisfação humana constante em busca de conexão."
           </p>
-          
+        </blockquote>
+
+        <div className="space-y-6">
+          <h2 className="text-sm font-black text-white uppercase tracking-[0.2em] flex items-center gap-3">
+            <div className="w-8 h-[1px] bg-blue-500" /> O Big Bang
+          </h2>
+          <p className="text-zinc-500 leading-relaxed text-lg font-light">
+            Tudo começa na necessidade de superar a barreira física. Das <span className="text-zinc-200">pinturas rupestres</span> ao telégrafo de Morse em 1835, o homem sempre buscou enviar dados à distância através de pulsos — o ancestral espiritual do bit.
+          </p>
         </div>
 
-        <h2 className="text-2xl font-bold text-white mb-6">O que aprendemos hoje?</h2>
-        <p className="text-zinc-400 leading-loose">
-          A base da web não é apenas escrever código, mas entender como os pacotes de dados viajam por <strong>cabos submarinos</strong> e são interpretados pelo seu navegador.
-        </p>
-        
+        {/* INFOGRÁFICO MINIMALISTA */}
+        <div className="py-12 flex justify-center items-center gap-12 grayscale opacity-30 hover:opacity-100 hover:grayscale-0 transition-all duration-700">
+          <Radio size={32} className="text-blue-500" />
+          <div className="h-[1px] w-24 bg-zinc-800" />
+          <Monitor size={32} className="text-white" />
+        </div>
+
+        <div className="space-y-6">
+          <h2 className="text-sm font-black text-white uppercase tracking-[0.2em] flex items-center gap-3">
+            <div className="w-8 h-[1px] bg-blue-500" /> ARPANET & TCP/IP
+          </h2>
+          <p className="text-zinc-500 leading-relaxed text-lg font-light">
+            Em 1969, nasceu a ARPANET. O desafio? Fazer máquinas diferentes falarem a mesma língua. Foi aqui que <span className="text-zinc-200 font-medium">Vint Cerf e Robert Kahn</span> criaram o TCP/IP, permitindo que a rede crescesse de 4 pontos para o infinito global.
+          </p>
+        </div>
+
+        {/* CALLOUT BOX MINIMALISTA */}
+        <div className="p-8 bg-zinc-900/30 rounded-3xl border border-zinc-900">
+          <h4 className="text-white text-xs font-black uppercase tracking-widest mb-4 flex items-center gap-2">
+            <Zap size={14} className="text-blue-500" /> Hipertexto
+          </h4>
+          <p className="text-zinc-500 text-sm leading-relaxed">
+            Tim Berners-Lee uniu tudo no CERN. Ele não apenas imaginou uma teia de documentos, mas construiu o <span className="text-blue-400">HTTP</span> e o <span className="text-blue-400">HTML</span>. Nascia a WWW.
+          </p>
+        </div>
       </article>
 
-      {/* FOOTER DO BLOG: PRÓXIMOS PASSOS */}
-      <footer className="pt-12 border-t border-zinc-800 space-y-8">
-        <div className="flex flex-col md:flex-row gap-6 justify-between items-center">
-          <div className="space-y-1">
-            <h4 className="text-white font-bold">Gostou deste estudo?</h4>
-            <p className="text-zinc-500 text-sm">Próxima leitura: Fundamentos do HTML5</p>
-          </div>
-          <button className="group flex items-center gap-2 px-8 py-3 bg-white text-black font-bold rounded-full hover:bg-zinc-200 transition-all">
-            Próxima Aula <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-          </button>
+      {/* FOOTER: DIRETO AO PONTO */}
+      <footer className="max-w-5xl pt-16 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+        <div className="space-y-2">
+          <p className="text-zinc-700 text-[10px] font-black uppercase tracking-[0.4em]">Próximo Passo</p>
+          <h4 className="text-white font-bold text-xl tracking-tight">A Evolução para o HTML5</h4>
         </div>
-
-        {/* MATERIAL DE APOIO COMO LISTA DE REFERÊNCIAS */}
-        <div className="bg-zinc-900/20 p-6 rounded-2xl">
-          <h5 className="text-zinc-300 font-semibold mb-4 text-xs uppercase tracking-widest">Referências Bibliográficas</h5>
-          <ul className="space-y-2 list-none p-0">
-             <li><a href="#" className="text-zinc-500 hover:text-blue-400 text-sm flex items-center gap-2 no-underline"><BookOpen size={14}/> MDN Web Docs: History of the Web</a></li>
-             <li><a href="#" className="text-zinc-500 hover:text-blue-400 text-sm flex items-center gap-2 no-underline"><BookOpen size={14}/> CERN: The birth of the Web</a></li>
-          </ul>
-        </div>
+        
+        <button className="group flex items-center gap-4 px-10 py-4 bg-white text-black text-xs font-black uppercase tracking-widest rounded-full hover:bg-blue-500 hover:text-white transition-all duration-500">
+          Continuar <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
+        </button>
       </footer>
     </div>
   );

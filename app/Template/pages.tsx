@@ -2,8 +2,6 @@
 import { useState } from 'react';
 import HamburgerMenu from "@/src/layout/HamburgerMenu";
 import LessonLayout from "@/src/components/ui/lesson-layout";
-
-// Imports das Matérias
 import HtmlCss from "@/src/feactures/HtmleCss";
 import Arquitetura from "@/src/feactures/Arquitetura";
 import ProgramacaoWeb from "@/src/feactures/ProgramacaoWeb";

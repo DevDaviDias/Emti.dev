@@ -10,12 +10,12 @@ interface JavaPooPageProps {
 export default function JavaPooPage({ onNavigate }: JavaPooPageProps) {
   const aulas = [
     { 
-      n: 1, 
-      t: "Classes e Objetos", 
-      d: "A base da POO: Aprenda a criar seus próprios tipos de dados e instanciar objetos.", 
-      s: "concluido",
-      id: "java-aula-1" 
-    },
+  n: 1, 
+  t: "O Início: De Algoritmos ao Java", 
+  d: "Entenda a história do Java, o porquê do café e como os algoritmos moldam a base da POO.", 
+  s: "concluido",
+  id: "java-aula-1" 
+},
     { 
       n: 2, 
       t: "Atributos e Métodos", 
@@ -53,6 +53,7 @@ export default function JavaPooPage({ onNavigate }: JavaPooPageProps) {
             numero={aula.n}
             titulo={aula.t}
             descricao={aula.d}
+            color="orange" // Java é Laranja
             status={aula.s as any}
             onClick={() => onNavigate(aula.id)}
           />
