@@ -9,10 +9,10 @@ interface WebPageProps {
 
 export default function ProgramacaoWebPage({ onNavigate }: WebPageProps) {
   const aulas = [
-    { 
+   { 
       n: 1, 
-      t: "Fundamentos de JavaScript", 
-      d: "Manipulação do DOM, eventos e a lógica por trás das interações na web.", 
+      t: "A Origem e o Funcionamento da Web", 
+      d: "A história da internet desde as cavernas até os protocolos TCP/IP e HTML.", 
       s: "concluido",
       id: "web-aula-1" 
     },
@@ -33,19 +33,27 @@ export default function ProgramacaoWebPage({ onNavigate }: WebPageProps) {
   ];
 
   return (
-    <div className="max-w-5xl mx-auto md:p-8 p-4">
-      {/* Título da matéria de Programação Web */}
-      <Title title="Programação Web" />
+    /* 🚀 TELA CHEIA: Removido max-w-5xl e mx-auto para alinhar perfeitamente ao menu */
+    <div className="w-full md:p-8 p-4 animate-in fade-in duration-500">
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+      {/* HEADER: Título + Descrição padronizada */}
+      <header className="mb-10">
+        <Title title="Programação Web" />
+        <p className="text-zinc-400 mt-2 text-sm md:text-base max-w-2xl">
+          Do protocolo HTTP ao desenvolvimento de interfaces dinâmicas. Domine as 
+          tecnologias que movem a internet moderna e aprenda a construir aplicações escaláveis.
+        </p>
+      </header>
+      
+      {/* GRID: Expandido para até 4 colunas para aproveitar o espaço lateral */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {aulas.map((aula) => (
           <LessonCard 
-            key={aula.n}
+            key={aula.id}
             numero={aula.n}
             titulo={aula.t}
             descricao={aula.d}
             status={aula.s as any}
-            // Navegação para o conteúdo específico da aula no Template
             onClick={() => onNavigate(aula.id)}
           />
         ))}

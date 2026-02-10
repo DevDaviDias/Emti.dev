@@ -30,7 +30,7 @@ export default function HamburgerMenu({ children, onChangeSessao, sessaoAtiva }:
   ];
 
   return (
-    <main className="flex min-h-screen bg-zinc-950 text-zinc-100 antialiased font-sans">
+    <div className="flex min-h-screen bg-zinc-950 text-zinc-100 antialiased font-sans">
 
       {/* 🖥️ SIDEBAR DESKTOP */}
       <aside className="hidden md:flex fixed left-0 top-0 h-full w-64 bg-zinc-900/30 border-r border-zinc-800/50 flex-col p-6 backdrop-blur-xl">
@@ -54,8 +54,8 @@ export default function HamburgerMenu({ children, onChangeSessao, sessaoAtiva }:
                 onClick={() => onChangeSessao(m.slug)}
                 // Adicionado: w-full e justify-start para garantir alinhamento
                 className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm group w-full justify-start ${isActive
-                    ? 'bg-blue-600/10 text-blue-400 shadow-[inset_0_0_20px_rgba(37,99,235,0.05)]'
-                    : 'hover:bg-zinc-800/50 text-zinc-400 hover:text-zinc-200'
+                  ? 'bg-blue-600/10 text-blue-400 shadow-[inset_0_0_20px_rgba(37,99,235,0.05)]'
+                  : 'hover:bg-zinc-800/50 text-zinc-400 hover:text-zinc-200'
                   }`}
               >
                 {/* Ícone fixo (não encolhe) */}
@@ -96,18 +96,20 @@ export default function HamburgerMenu({ children, onChangeSessao, sessaoAtiva }:
       </nav>
 
       {/* 📝 CONTEÚDO COM ANIMAÇÃO CORRIGIDA */}
-      <div className=" md:pl-64 pb-24 md:pb-0">
-        <div className="max-w-4xl mx-auto px-6 py-12 md:py-4">
+      {/* 📝 CONTEÚDO OCUPANDO A TELA TODA */}
+      <div className="flex-1 md:pl-64 w-full">
+        {/* Removido o 'max-w-4xl' e o 'mx-auto' para permitir que o conteúdo estique */}
+        <div className="w-full px-4 md:px-8 py-6">
           {/* Usamos o key para forçar a animação toda vez que a sessão muda */}
           <div
             key={sessaoAtiva}
-            className="animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out"
+            className="animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out w-full"
           >
             {children}
           </div>
         </div>
       </div>
 
-    </main>
+    </div>
   );
 }

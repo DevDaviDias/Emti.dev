@@ -29,13 +29,14 @@ export default function HtmlCssPage({ onNavigate }: { onNavigate: (slug: string)
   ];
 
   return (
-    <div className="max-w-6xl mx-auto p-6 md:p-12 animate-in fade-in duration-500">
+ <div className="w-full px-6 py-10 md:py-12 animate-in fade-in duration-500">
       <header className="mb-12">
         <Title title="HTML5 & CSS3" />
         <p className="text-zinc-400 mt-2">Fundamentos do desenvolvimento front-end moderno.</p>
       </header>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Aqui o grid agora vai se espalhar por toda a largura disponível */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {aulas.map((aula) => (
           <LessonCard 
             key={aula.id}

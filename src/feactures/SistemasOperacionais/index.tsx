@@ -33,13 +33,23 @@ export default function SistemasOperacionaisPage({ onNavigate }: SoPageProps) {
   ];
 
   return (
-    <div className="max-w-5xl mx-auto md:p-8 p-4">
-      <Title title="Sistemas Operacionais" />
+    /* 🚀 TELA CHEIA: Removido max-w-5xl e mx-auto */
+    <div className="w-full md:p-8 p-4 animate-in fade-in duration-500">
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+      {/* HEADER: Título + Descrição padronizada */}
+      <header className="mb-10">
+        <Title title="Sistemas Operacionais" />
+        <p className="text-zinc-400 mt-2 text-sm md:text-base max-w-2xl">
+          Desvende o software mais importante do computador. Aprenda como o SO gerencia 
+          recursos, processos e arquivos para manter tudo funcionando em harmonia.
+        </p>
+      </header>
+      
+      {/* GRID: Expandindo para 4 colunas em monitores largos */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-10">
         {aulas.map((aula) => (
           <LessonCard 
-            key={aula.n}
+            key={aula.id} // Usando ID como key para melhor performance
             numero={aula.n}
             titulo={aula.t}
             descricao={aula.d}

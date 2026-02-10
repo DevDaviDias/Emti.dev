@@ -33,19 +33,27 @@ export default function JavaPooPage({ onNavigate }: JavaPooPageProps) {
   ];
 
   return (
-    <div className="max-w-5xl mx-auto p-4 md:p-8">
-      {/* Título da matéria */}
-      <Title title="Java POO" />
+    /* REMOVIDO: max-w e mx-auto para ocupar a tela toda */
+    <div className="w-full p-4 md:p-8 animate-in fade-in duration-500">
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+      {/* HEADER: Título + Parágrafo de descrição */}
+      <header className="mb-10">
+        <Title title="Java POO" />
+        <p className="text-zinc-400 mt-2 text-sm md:text-base max-w-2xl">
+          Explore os pilares da Programação Orientada a Objetos com Java, desde a criação de classes 
+          até conceitos avançados de arquitetura de software.
+        </p>
+      </header>
+      
+      {/* GRID: Agora com 4 colunas em telas muito grandes (xl) */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {aulas.map((aula) => (
           <LessonCard 
-            key={aula.n}
+            key={aula.id}
             numero={aula.n}
             titulo={aula.t}
             descricao={aula.d}
             status={aula.s as any}
-            // Envia o ID para o estado 'sessao' do Template
             onClick={() => onNavigate(aula.id)}
           />
         ))}

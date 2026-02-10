@@ -3,7 +3,7 @@ import { useState } from 'react';
 import HamburgerMenu from "@/src/layout/HamburgerMenu";
 import LessonLayout from "@/src/components/ui/lesson-layout";
 
-// Imports das Matérias (Listas de Cards)
+// Imports das Matérias
 import HtmlCss from "@/src/feactures/HtmleCss";
 import Arquitetura from "@/src/feactures/Arquitetura";
 import ProgramacaoWeb from "@/src/feactures/ProgramacaoWeb";
@@ -11,7 +11,7 @@ import Logica from "@/src/feactures/Logica";
 import SistemasOperacionais from "@/src/feactures/SistemasOperacionais";
 import Javapoo from "@/src/feactures/Javapoo";
 
-// Import do nosso dicionário de aulas
+// Import do dicionário de aulas
 import { COMPONENTES_AULA } from "@/src/feactures/aulas";
 
 export default function Template({ children }: { children: React.ReactNode }) {
@@ -27,7 +27,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
   };
 
   const renderAula = () => {
-    // Se a sessão atual não for uma aula cadastrada, não renderiza nada aqui
     const ConteudoAula = COMPONENTES_AULA[sessao];
     if (!ConteudoAula) return null;
 
@@ -38,33 +37,44 @@ export default function Template({ children }: { children: React.ReactNode }) {
 
     return (
       <LessonLayout 
-        titulo={`Aula ${numero} - ${config?.nome || "Conteúdo"}`} 
-        onBack={() => setSessao(config?.slug || 'home')}
-      >
-        <div className="p-4 md:p-8 bg-zinc-900/40 border border-zinc-800 rounded-[2.5rem] backdrop-blur-sm text-white">
-          {/* Renderiza o componente específico daquela aula */}
-          <ConteudoAula />
-        </div>
-      </LessonLayout>
+    titulo={`Aula ${numero} - ${config?.nome || "Conteúdo"}`} 
+    onBack={() => setSessao(config?.slug || 'home')}
+  >
+    {/* items-start garante que o conteúdo alinhe à esquerda, não ao centro */}
+    <div className="w-full flex flex-col items-start">
+      <div className="p-4 w-full"> 
+        <ConteudoAula />
+      </div>
+    </div>
+  </LessonLayout>
     );
   };
 
   return (
     <HamburgerMenu onChangeSessao={(s) => setSessao(s)} sessaoAtiva={sessao}>
       
-      {/* 1. SEÇÕES DE LISTAGEM (MATÉRIAS) */}
-      {sessao === "html-css" && <HtmlCss onNavigate={setSessao} />}
-      {sessao === "hardware" && <Arquitetura onNavigate={setSessao} />}
-      {sessao === "web"      && <ProgramacaoWeb onNavigate={setSessao} />}
-      {sessao === "logica"   && <Logica onNavigate={setSessao} />}
-      {sessao === "so"       && <SistemasOperacionais onNavigate={setSessao} />}
-      {sessao === "java"     && <Javapoo onNavigate={setSessao} />}
+      {/* Garantimos que o container principal tenha w-full e flex-1 
+          para empurrar o conteúdo contra as bordas.
+      */}
+      <main className="flex-1 w-full flex flex-col items-center justify-start">
+        
+        <div className="w-full ">
+          {sessao === "html-css" && <HtmlCss onNavigate={setSessao} />}
+          {sessao === "hardware" && <Arquitetura onNavigate={setSessao} />}
+          {sessao === "web"      && <ProgramacaoWeb onNavigate={setSessao} />}
+          {sessao === "logica"   && <Logica onNavigate={setSessao} />}
+          {sessao === "so"       && <SistemasOperacionais onNavigate={setSessao} />}
+          {sessao === "java"     && <Javapoo onNavigate={setSessao} />}
+        </div>
 
-      {/* 2. CONTEÚDO ESPECÍFICO DA AULA */}
-      {renderAula()}
+        {renderAula()}
 
-      {/* 3. HOME */}
-      {sessao === "home" && children}
+        {sessao === "home" && (
+          <div className="w-full">
+            {children}
+          </div>
+        )}
+      </main>
     </HamburgerMenu>
   );
 }
