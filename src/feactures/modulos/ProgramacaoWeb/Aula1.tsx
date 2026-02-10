@@ -6,10 +6,10 @@ export default function AulaProgramacaoWeb1() {
   const videoId = "Ejkb_YpuHWs";
 
   return (
-    <div className="max-w-3xl mx-auto space-y-16 py-10 animate-in fade-in duration-1000">
+    <div className="w-full mx-auto space-y-10 animate-in fade-in duration-700">
       
       {/* HEADER ESTILO BLOG */}
-      <header className="space-y-6 text-center md:text-left">
+      <header className="space-y-6  md:text-left">
         <div className="flex items-center justify-center md:justify-start gap-4 text-zinc-500 text-sm font-medium">
           <span className="bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full text-xs tracking-tighter">Módulo 01</span>
           <span className="flex items-center gap-1"><Clock size={14} /> 15 min de leitura</span>

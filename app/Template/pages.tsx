@@ -7,7 +7,7 @@ import LessonLayout from "@/src/components/ui/lesson-layout";
 import HtmlCss from "@/src/feactures/HtmleCss";
 import Arquitetura from "@/src/feactures/Arquitetura";
 import ProgramacaoWeb from "@/src/feactures/ProgramacaoWeb";
-import Logica from "@/src/feactures/Logica";
+import Logica from "@/src/feactures/Logica/Logica";
 import SistemasOperacionais from "@/src/feactures/SistemasOperacionais";
 import Javapoo from "@/src/feactures/Javapoo";
 
