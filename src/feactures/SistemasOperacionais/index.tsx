@@ -13,7 +13,7 @@ export default function SistemasOperacionaisPage({ onNavigate }: SoPageProps) {
       n: 1,
       t: "O Cérebro da Máquina",
       d: "Descubra como o Sistema Operacional gerencia o hardware e permite que você use o computador.",
-      s: "pendente",
+      s: "concluido",
       id: "so-aula-1"
     },
     {

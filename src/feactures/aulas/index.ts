@@ -14,6 +14,5 @@ export const COMPONENTES_AULA: Record<string, React.ComponentType> = {
 
   "web-aula-1": AulaProgramacaoWeb1,
   "web-aula-2": AulaProgramacaoWeb2,
-  
-   "so-aula-1": AulaSo1,
+ 
 };
