@@ -42,6 +42,7 @@ export default function HamburgerMenu({ children, onChangeSessao, sessaoAtiva }:
             aula<span className="text-blue-500">dev</span>
           </h1>
         </div>
+        
 
         <nav className="flex flex-col gap-4">
           <p className="text-zinc-500 text-[13px] uppercase tracking-[0.2em] mb-6 font-bold ml-2">Matérias</p>
