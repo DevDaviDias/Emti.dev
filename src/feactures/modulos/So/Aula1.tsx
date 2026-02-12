@@ -1,25 +1,24 @@
 'use client';
 
-import { Clock, ArrowRight, Monitor, Cpu, Layers, HardDrive, Sparkles, Smartphone } from "lucide-react";
+import { Clock, ArrowRight, Monitor, Cpu, Layers, HardDrive, BookOpen, ExternalLink } from "lucide-react";
 
 interface AulaProps {
   onNext: (slug: string) => void;
 }
 
 export default function AulaSistemasOperacionais1({ onNext }: AulaProps) {
-  // ID do vídeo que você escolher para SO (ex: canal Curso em Vídeo ou similar)
-  const videoId = "26QREBv9_t8"; 
+  const videoId = "BcMAuf8hit8";
   const proximaAulaSlug = "so-aula-2";
 
   return (
     <div className="flex flex-col gap-16 animate-in fade-in duration-1000 bg-zinc-950 p-6 md:p-16">
       
-      {/* 1. HEADER MINIMALISTA - IDENTIDADE VERDE/CIANO */}
+      {/* 1. HEADER */}
       <header className="max-w-4xl space-y-6 text-left">
         <div className="flex items-center gap-4 text-zinc-600 text-[10px] font-black uppercase tracking-[0.3em]">
           <span className="text-emerald-500">Módulo 01</span>
           <div className="w-1 h-1 bg-zinc-800 rounded-full" />
-          <span className="flex items-center gap-1"><Clock size={12} /> 50 min de aula</span>
+          
         </div>
         
         <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter leading-[0.9]">
@@ -44,10 +43,8 @@ export default function AulaSistemasOperacionais1({ onNext }: AulaProps) {
         </div>
       </section>
 
-      {/* 3. CONTEÚDO EM GRID (BENTO MINIMALISTA) */}
+      {/* 3. CONTEÚDO EM GRID */}
       <article className="max-w-5xl space-y-12">
-        
-        {/* Analogia do Gerente */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center border-y border-zinc-900 py-12">
           <div className="space-y-4">
              <h3 className="text-emerald-500 font-black uppercase text-xs tracking-widest flex items-center gap-2">
@@ -62,7 +59,32 @@ export default function AulaSistemasOperacionais1({ onNext }: AulaProps) {
           </div>
         </div>
 
-        {/* Funções Principais */}
+        {/* --- NOVA SEÇÃO: LEITURA COMPLEMENTAR --- */}
+        <div className="p-8 md:p-12 rounded-[2.5rem] bg-gradient-to-br from-zinc-900/50 to-transparent border border-zinc-900 space-y-6">
+          <div className="flex items-center gap-3 text-emerald-500">
+            <BookOpen size={20} />
+            <span className="font-black uppercase text-xs tracking-widest">Aprofundamento</span>
+          </div>
+          
+          <div className="space-y-4">
+            <h3 className="text-2xl text-white font-bold">Por que ler sobre isso?</h3>
+            <p className="text-zinc-400 leading-relaxed max-w-3xl">
+              Para quem está começando agora, entender a teoria por trás dos Sistemas Operacionais ajuda a compreender como os programas que você vai criar no futuro gerenciam memória e processos. Este guia da HostMidia explica de forma simples os conceitos de Kernel, drivers e a evolução dos sistemas.
+            </p>
+            
+            <a 
+              href="https://www.hostmidia.com.br/blog/sistema-operacional/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-emerald-500 hover:text-emerald-400 font-medium transition-colors group"
+            >
+              Ler artigo completo 
+              <ExternalLink size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            </a>
+          </div>
+        </div>
+        {/* -------------------------------------- */}
+
         <div className="space-y-8">
            <h2 className="text-white font-bold text-xl tracking-tight">Principais Funções</h2>
            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -83,18 +105,9 @@ export default function AulaSistemasOperacionais1({ onNext }: AulaProps) {
               </div>
            </div>
         </div>
-
-        {/* Exemplos do Dia a Dia */}
-        <div className="flex flex-wrap gap-3 justify-center md:justify-start">
-           {['Windows', 'Android', 'iOS', 'Linux', 'Smart TV'].map((item) => (
-             <span key={item} className="px-4 py-2 rounded-full border border-zinc-800 text-zinc-500 text-xs font-medium">
-                {item}
-             </span>
-           ))}
-        </div>
       </article>
 
-      {/* 4. FOOTER DE NAVEGAÇÃO */}
+      {/* 4. FOOTER */}
       <footer className="max-w-5xl pt-16 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
         <div className="space-y-2 text-left">
           <p className="text-zinc-700 text-[10px] font-black uppercase tracking-[0.4em]">Próximo Passo</p>

@@ -7,34 +7,44 @@ interface LogicaPageProps {
   onNavigate: (sessao: string) => void;
 }
 
+// Interface para garantir a segurança e consistência dos dados
+interface AulaLogica {
+  n: number;
+  t: string;
+  d: string;
+  s: "concluido" | "pendente" | "bloqueado";
+  id: string;
+}
+
 export default function LogicaPage({ onNavigate }: LogicaPageProps) {
-  // O array que você postou, agora integrado ao layout correto
-  const aulas = [
-    { n: 1, t: "Algoritmos e Fluxogramas", d: "A base de tudo: como estruturar o pensamento lógico.", s: "concluido", id: "logica-aula-1" },
-    { n: 2, t: "Variáveis e Operadores", d: "Aprenda a manipular dados e realizar cálculos.", s: "concluido", id: "logica-aula-2" },
-    { n: 3, t: "Estruturas de Decisão", d: "O poder do IF e ELSE no controle de fluxo.", s: "pendente", id: "logica-aula-3" },
-    { n: 4, t: "Estruturas de Repetição", d: "Dominando loops: While e For.", s: "bloqueado", id: "logica-aula-4" },
-    { n: 5, t: "Vetores e Arrays", d: "Como trabalhar com listas de dados organizadas.", s: "bloqueado", id: "logica-aula-5" },
-    { n: 6, t: "Matrizes", d: "Explorando dados em múltiplas dimensões.", s: "bloqueado", id: "logica-aula-6" },
-    { n: 7, t: "Funções e Procedimentos", d: "Modularizando seu código para reutilização.", s: "bloqueado", id: "logica-aula-7" },
-    { n: 8, t: "Escopo de Variáveis", d: "Entenda a diferença entre global e local.", s: "bloqueado", id: "logica-aula-8" },
-    { n: 9, t: "Recursividade", d: "O conceito de funções que chamam a si mesmas.", s: "bloqueado", id: "logica-aula-9" },
-    { n: 10, t: "Desafio Final", d: "Aplique tudo o que aprendeu em um projeto real.", s: "bloqueado", id: "logica-aula-10" },
+  const aulas: AulaLogica[] = [
+    // --- 1º SEMESTRE (Fundamentos e Algoritmos) ---
+    { n: 1, t: "O que é Lógica e Algoritmo", d: "Entenda o conceito de pensar passo a passo para resolver problemas cotidianos.", s: "concluido", id: "logica-aula-1" },
+    { n: 2, t: "Sequência Lógica", d: "A importância da ordem das instruções: por que o computador faz o que mandamos?", s: "pendente", id: "logica-aula-2" },
+    { n: 3, t: "Construção de Algoritmos", d: "Do Portugol ao Fluxograma: formas de representar o raciocínio antes de codar.", s: "bloqueado", id: "logica-aula-3" },
+    { n: 4, t: "Variáveis e Memória", d: "Como o algoritmo reserva espaços para guardar números, textos e valores lógicos.", s: "bloqueado", id: "logica-aula-4" },
+    { n: 5, t: "Entrada e Saída de Dados", d: "Como o algoritmo recebe informações e exibe os resultados processados.", s: "bloqueado", id: "logica-aula-5" },
+    { n: 6, t: "Operadores Lógicos e Matemáticos", d: "Trabalhando com cálculos e comparações (E, OU, NÃO) para validar condições.", s: "bloqueado", id: "logica-aula-6" },
+
+    // --- 2º SEMESTRE (Estruturas Avançadas - Descomentado para estrutura) ---
+    { n: 7, t: "Vetores: Conceito e Memória", d: "Introdução às variáveis indexadas: como guardar uma lista de dados.", s: "bloqueado", id: "logica-aula-7" },
+    { n: 8, t: "Vetores e Laços de Repetição", d: "Automatizando a leitura de listas usando estruturas de repetição.", s: "bloqueado", id: "logica-aula-8" },
+    { n: 9, t: "Matrizes: Duas Dimensões", d: "Entendendo tabelas de dados (linhas e colunas) e como percorrê-las.", s: "bloqueado", id: "logica-aula-9" },
   ];
 
   return (
-    /* ✅ Layout de tela cheia sem mx-auto */
     <div className="w-full p-4 md:p-8 animate-in fade-in duration-500">
       
-      <header className="mb-10">
+      {/* HEADER: Borda temática em Verde (Emerald/Green) */}
+      <header className="mb-10 border-l-4 border-green-500 pl-6">
         <Title title="Lógica de Programação" />
-        <p className="text-zinc-400 mt-2 text-sm md:text-base max-w-2xl">
+        <p className="text-zinc-400 mt-2 text-sm md:text-base max-w-2xl leading-relaxed">
           Aprenda a pensar como um programador. Domine algoritmos, estruturas de repetição 
           e organização de dados para construir qualquer software.
         </p>
       </header>
       
-      {/* Grid responsivo: em telas muito grandes (2xl), mostra 5 colunas por causa do volume de aulas */}
+      {/* GRID: Expandido para até 5 colunas em telas ultra-wide */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
         {aulas.map((aula) => (
           <LessonCard 
@@ -42,10 +52,20 @@ export default function LogicaPage({ onNavigate }: LogicaPageProps) {
             numero={aula.n}
             titulo={aula.t}
             descricao={aula.d}
-            status={aula.s as any}
+            color="green" // Cor que representa fluxo e algoritmos
+            status={aula.s}
             onClick={() => onNavigate(aula.id)}
           />
         ))}
+      </div>
+
+      {/* CALLOUT: Dica de Algoritmo */}
+      <div className="mt-12 p-6 bg-green-500/5 border border-green-500/10 rounded-2xl">
+        <h4 className="text-green-500 font-bold text-xs uppercase mb-2">Mentalidade Algorítmica</h4>
+        <p className="text-zinc-500 text-sm italic">
+          "Um algoritmo nada mais é do que uma receita finita de passos bem definidos. 
+          Se você consegue explicar para um humano, você consegue explicar para a máquina."
+        </p>
       </div>
     </div>
   );
