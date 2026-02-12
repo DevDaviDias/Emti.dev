@@ -142,12 +142,7 @@ export default function JavaAula2({ onNext }: AulaProps) {
           <h4 className="text-white font-bold text-xl uppercase italic tracking-tight">Primeiro Código: Hello World</h4>
         </div>
         
-        <button 
-          onClick={() => onNext(proximaAulaSlug)}
-          className="group flex items-center gap-4 px-10 py-4 bg-white text-black text-[10px] font-black uppercase tracking-widest rounded-full hover:bg-orange-500 hover:text-white transition-all duration-500 shadow-2xl shadow-white/5"
-        >
-          Pronto para Codar <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
-        </button>
+      
       </footer>
     </div>
   );

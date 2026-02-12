@@ -33,18 +33,36 @@ export default function Template({ children }: { children: React.ReactNode }) {
     const numero = partes[partes.length - 1];
     const config = voltarPara[prefixo];
 
+    // Criamos uma função simples para avançar para a próxima aula
+    // Ex: se sessao é "java-1", vira "java-2"
+    const handleProximaAula = () => {
+      const proximoNumero = parseInt(numero) + 1;
+      const novaSessao = `${prefixo}-${proximoNumero}`;
+      
+      // Só navega se a próxima aula existir no dicionário
+      if (COMPONENTES_AULA[novaSessao]) {
+        setSessao(novaSessao);
+      } else {
+        // Se não houver próxima, volta para a listagem da matéria
+        setSessao(config?.slug || 'home');
+      }
+    };
+
     return (
       <LessonLayout 
-    titulo={`Aula ${numero} - ${config?.nome || "Conteúdo"}`} 
-    onBack={() => setSessao(config?.slug || 'home')}
-  >
-    {/* items-start garante que o conteúdo alinhe à esquerda, não ao centro */}
-    <div className="w-full flex flex-col items-start">
-      <div className="p-4 w-full"> 
-        <ConteudoAula />
-      </div>
-    </div>
-  </LessonLayout>
+        titulo={`Aula ${numero} - ${config?.nome || "Conteúdo"}`} 
+        onBack={() => setSessao(config?.slug || 'home')}
+      >
+        <div className="w-full flex flex-col items-start">
+          <div className="p-4 w-full"> 
+            {/* CORREÇÃO AQUI: Passando as props obrigatórias para o componente */}
+            <ConteudoAula 
+              onNext={handleProximaAula} 
+              onBack={() => setSessao(config?.slug || 'home')} 
+            />
+          </div>
+        </div>
+      </LessonLayout>
     );
   };
 

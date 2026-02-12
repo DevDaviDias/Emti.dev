@@ -10,7 +10,8 @@ import AulaProgramacaoWeb2 from "@/src/feactures/modulos/ProgramacaoWeb/Aula2";
 
 // ADICIONE O "export" AQUI EMBAIXO:
 export interface AulaProps {
-  onNext: (slug: string) => void;
+  onNext?: (slug: string) => void; // O '?' torna opcional
+  onBack?: () => void;   
 }
 
 export const COMPONENTES_AULA: Record<string, React.ComponentType<AulaProps>> = {
