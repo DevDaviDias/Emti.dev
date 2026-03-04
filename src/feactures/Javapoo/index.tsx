@@ -20,10 +20,10 @@ export default function JavaPooPage({ onNavigate }: JavaPooPageProps) {
   const aulas: Aula[] = [
     // --- 1º SEMESTRE (Fundamentos) ---
     { n: 1, t: "Apresentação da Programação", d: "O que é Java e o mercado de trabalho.", s: "concluido", id: "java-aula-1" },
-    { n: 2, t: "Instalação do Java e IDE", d: "Configurando o JDK e o Eclipse.", s: "pendente", id: "java-aula-2" },
-    { n: 3, t: "Primeiro contato com código", d: "Sintaxe básica e criação do primeiro arquivo.", s: "bloqueado", id: "java-aula-3" },
-    { n: 4, t: "Estrutura de um programa", d: "Entendendo classes e o método main.", s: "bloqueado", id: "java-aula-4" },
-    { n: 5, t: "Olá Mundo", d: "Execução do primeiro programa no console.", s: "bloqueado", id: "java-aula-5" },
+    { n: 2, t: "Instalação do Java e IDE", d: "Configurando o JDK e o Eclipse.", s: "concluido", id: "java-aula-2" },
+    { n: 3, t: "Primeiro contato com código", d: "Sintaxe básica e criação do primeiro arquivo.", s: "concluido", id: "java-aula-3" },
+    { n: 4, t: "Estrutura de um programa", d: "Entendendo classes e o método main.", s: "concluido", id: "java-aula-4" },
+    { n: 5, t: "Olá Mundo", d: "Execução do primeiro programa no console.", s: "concluido", id: "java-aula-5" },
     { n: 6, t: "Compilação e execução", d: "O fluxo do código fonte ao Bytecode.", s: "bloqueado", id: "java-aula-6" },
     { n: 7, t: "Variáveis e Tipos de Dados", d: "Armazenamento de dados e tipos primitivos.", s: "bloqueado", id: "java-aula-7" },
     { n: 8, t: "Operadores", d: "Cálculos matemáticos e lógicos em Java.", s: "bloqueado", id: "java-aula-8" },
