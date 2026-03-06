@@ -5,11 +5,15 @@ import JavaAula1 from "@/src/feactures/modulos/java-poo/Aula1";
 import JavaAula2 from "@/src/feactures/modulos/java-poo/Aula2";
 import JavaAula4 from "@/src/feactures/modulos/java-poo/Aula4";
 import JavaAula5 from "@/src/feactures/modulos/java-poo/Aula5";
-
+import JavaAula6 from "@/src/feactures/modulos/java-poo/Aula6";
+import JavaAula7 from "@/src/feactures/modulos/java-poo/Aula7";
 
 import AulaHtml1 from "@/src/feactures/modulos/HtmlEcss/Aula1";
+
+
 import AulaSo1 from "@/src/feactures/modulos/So/Aula1";
 import AulaSo6 from "@/src/feactures/modulos/So/Aula6"; 
+import AulaSo7 from "@/src/feactures/modulos/So/Aula7"; 
 
 
 import AulaProgramacaoWeb1 from "@/src/feactures/modulos/ProgramacaoWeb/Aula1";
@@ -17,6 +21,7 @@ import AulaProgramacaoWeb2 from "@/src/feactures/modulos/ProgramacaoWeb/Aula2";
 import AulaProgramacaoWeb3 from "@/src/feactures/modulos/ProgramacaoWeb/Aula3";
 import AulaProgramacaoWeb4 from "@/src/feactures/modulos/ProgramacaoWeb/Aula4";
 import AulaProgramacaoWeb5 from "@/src/feactures/modulos/ProgramacaoWeb/Aula5";
+
 
 
 
@@ -31,6 +36,10 @@ export const COMPONENTES_AULA: Record<string, React.ComponentType<AulaProps>> = 
   "java-aula-2": JavaAula2 as React.ComponentType<AulaProps>,
   "java-aula-4": JavaAula4 as React.ComponentType<AulaProps>,
   "java-aula-5": JavaAula5 as React.ComponentType<AulaProps>,
+  "java-aula-6": JavaAula6 as React.ComponentType<AulaProps>,
+  "java-aula-7": JavaAula7 as React.ComponentType<AulaProps>,
+
+
 
   "html-aula-1": AulaHtml1 as React.ComponentType<AulaProps>,
 
@@ -42,4 +51,6 @@ export const COMPONENTES_AULA: Record<string, React.ComponentType<AulaProps>> = 
   
   "so-aula-1": AulaSo1 as React.ComponentType<AulaProps>,
   "so-aula-6": AulaSo6 as React.ComponentType<AulaProps>,
-};
+  "so-aula-7": AulaSo7 as React.ComponentType<AulaProps>,
+
+}

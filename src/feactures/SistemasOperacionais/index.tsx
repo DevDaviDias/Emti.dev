@@ -25,7 +25,7 @@ export default function SistemasOperacionaisPage({ onNavigate }: SoPageProps) {
     { n: 4, t: "O Universo Linux", d: "Conceitos de Software Livre, distribuições (Kernel) e a filosofia do pinguim.", s: "concluido", id: "so-aula-4" },
     { n: 5, t: "Interface Gráfica (GUI)", d: "A evolução da interação humana: do texto puro às janelas, ícones e menus.", s: "bloqueado", id: "so-aula-5" },
     { n: 6, t: "Gerenciamento de Arquivos", d: "Como o SO organiza dados no disco: pastas, extensões e sistemas de arquivos.", s: "concluido", id: "so-aula-6" },
-    { n: 7, t: "Instalação do S.O.", d: "Preparação de ambiente, BIOS/UEFI e o processo de instalação passo a passo.", s: "bloqueado", id: "so-aula-7" },
+    { n: 7, t: "Instalação do S.O.", d: "Preparação de ambiente, BIOS/UEFI e o processo de instalação passo a passo.", s: "concluido", id: "so-aula-7" },
     { n: 8, t: "Particionamento de Disco", d: "Como dividir o HD/SSD para organizar dados ou instalar múltiplos sistemas.", s: "bloqueado", id: "so-aula-8" },
     { n: 9, t: "O Terminal (Linha de Comando)", d: "Interagindo com o sistema sem o mouse: conceitos de CLI (Command Line Interface).", s: "bloqueado", id: "so-aula-9" },
     { n: 10, t: "Comandos Básicos", d: "Prática de comandos fundamentais para navegação e manipulação via terminal.", s: "bloqueado", id: "so-aula-10" },
