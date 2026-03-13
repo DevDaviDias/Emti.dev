@@ -19,9 +19,9 @@ export default function Arquitetura({ onNavigate }: ArquiteturaProps) {
   const aulas: Aula[] = [
     // --- 1º SEMESTRE (Fundamentos e Hardware) ---
     { n: 1, t: "Conceitos de Hardware", d: "Apresentação da disciplina e a diferença fundamental entre hardware e software.", s: "concluido", id: "arq-aula-1" },
-    { n: 2, t: "Componentes Internos e Externos", d: "Identificação das peças que compõem o computador e seus periféricos.", s: "pendente", id: "arq-aula-2" },
-    { n: 3, t: "Unidade Central de Processamento (CPU)", d: "O cérebro do computador: como o processador executa instruções.", s: "bloqueado", id: "arq-aula-3" },
-    { n: 4, t: "Memórias e Armazenamento", d: "Diferenças cruciais entre Memória RAM, HD e SSD (Velocidade vs Persistência).", s: "bloqueado", id: "arq-aula-4" },
+    { n: 2, t: "Componentes Internos e Externos", d: "Identificação das peças que compõem o computador e seus periféricos.", s: "concluido", id: "arq-aula-2" },
+    { n: 3, t: "Unidade Central de Processamento (CPU)", d: "O cérebro do computador: como o processador executa instruções.", s: "concluido", id: "arq-aula-3" },
+    { n: 4, t: "Memórias e Armazenamento", d: "Diferenças cruciais entre Memória RAM, HD e SSD (Velocidade vs Persistência).", s: "concluido", id: "arq-aula-4" },
     { n: 5, t: "Placa-Mãe (Motherboard)", d: "A estrada principal: conhecendo os barramentos e conexões da placa principal.", s: "bloqueado", id: "arq-aula-5" },
     { n: 6, t: "Fonte de Alimentação", d: "Energia e potência: como alimentar os componentes de forma segura.", s: "bloqueado", id: "arq-aula-6" },
     { n: 7, t: "Fluxo de Inicialização (Boot)", d: "O que acontece do momento que você aperta o botão power até o SO carregar.", s: "bloqueado", id: "arq-aula-7" },

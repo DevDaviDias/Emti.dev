@@ -25,9 +25,9 @@ export default function ProgramacaoWebPage({ onNavigate }: WebPageProps) {
     { n: 4, t: "Sistemas Web", d: "Softwares que rodam inteiramente no navegador sem instalação local.", s: "concluido", id: "web-aula-4" },
     { n: 5, t: "Cliente e Servidor", d: "O modelo fundamental: quem solicita os dados e quem os entrega.", s: "concluido", id: "web-aula-5" },
     { n: 6, t: "Navegadores e Protocolos", d: "Como os browsers interpretam código e as regras de comunicação.", s: "concluido", id: "web-aula-6" },
-    { n: 7, t: "HTTP e HTTPS", d: "A anatomia de uma requisição web e a importância da segurança SSL.", s: "bloqueado", id: "web-aula-7" },
-    { n: 8, t: "Hospedagem e Servidores", d: "Onde os sites moram? O papel dos servidores e provedores de nuvem.", s: "bloqueado", id: "web-aula-8" },
-    { n: 9, t: "Front-end, Back-end e Full Stack", d: "As camadas do desenvolvimento e o papel de cada profissional.", s: "bloqueado", id: "web-aula-9" },
+    { n: 7, t: "HTTP e HTTPS", d: "A anatomia de uma requisição web e a importância da segurança SSL.", s: "concluido", id: "web-aula-7" },
+    { n: 8, t: "Hospedagem e Servidores", d: "Onde os sites moram? O papel dos servidores e provedores de nuvem.", s: "concluido", id: "web-aula-8" },
+    { n: 9, t: "Front-end, Back-end e Full Stack", d: "As camadas do desenvolvimento e o papel de cada profissional.", s: "pendente", id: "web-aula-9" },
 
     // --- 2º SEMESTRE (Exemplo de como ficaria a continuidade) ---
     { n: 10, t: "Introdução ao JavaScript", d: "A linguagem que dá vida à web: primeiros comandos e interatividade.", s: "bloqueado", id: "web-aula-10" },
